@@ -17,7 +17,7 @@ const WelcomeScreen = ({ onNext }) => {
                 <div className="flex flex-col items-center md:items-start gap-6 text-center md:text-left">
                     <img
                         alt="Cute birthday animation topper"
-                        className="w-[120px] md:w-[180px] object-cover"
+                        className="w-[100px] md:w-[180px] object-cover absolute top-12 right-6 md:relative md:top-0 md:right-0"
                         src="/gifs/intro.gif"
                     />
                     <div className="space-y-4">
