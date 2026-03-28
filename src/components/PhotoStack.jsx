@@ -3,16 +3,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
 import { motion } from 'framer-motion';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-cards';
+// Removed Swiper styles from here to avoid HMR loops on mobile
 
 const PhotoStack = ({ onNext }) => {
     const photos = [
-        { src: 'images/image 1.jpeg', alt: 'Moment 1' },
-        { src: 'images/image 2.jpeg', alt: 'Moment 2' },
-        { src: 'images/image 3.jpeg', alt: 'Moment 3' },
-        { src: 'images/image 4.jpeg', alt: 'Moment 4' },
+        { src: '/images/image 1.jpeg', alt: 'Moment 1' },
+        { src: '/images/image 2.jpeg', alt: 'Moment 2' },
+        { src: '/images/image 3.jpeg', alt: 'Moment 3' },
+        { src: '/images/image 4.jpeg', alt: 'Moment 4' },
     ];
 
     return (
