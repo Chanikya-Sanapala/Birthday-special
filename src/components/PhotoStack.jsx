@@ -32,7 +32,7 @@ const PhotoStack = ({ onNext }) => {
                 effect={'cards'}
                 grabCursor={true}
                 modules={[EffectCards]}
-                className="w-[280px] h-[400px] md:w-[340px] md:h-[460px]"
+                className="w-[90vw] max-w-[300px] h-[400px] md:w-[340px] md:h-[460px]"
             >
                 {photos.map((photo, index) => (
                     <SwiperSlide key={index} className="bg-white">

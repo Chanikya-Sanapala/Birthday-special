@@ -19,11 +19,11 @@ const CakeSection = ({ onNext }) => {
     };
 
     return (
-        <div className="relative min-h-screen flex flex-col items-center justify-start pt-20 overflow-hidden">
+        <div className="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4 overflow-hidden">
             <motion.h2
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                className="absolute top-10 text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-300 pb-2"
+                className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-300 pb-4 drop-shadow-sm"
             >
                 {isCut ? "Happy Birthday!" : "Swipe anywhere to cut the cake!"}
             </motion.h2>

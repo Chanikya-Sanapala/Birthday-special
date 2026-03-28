@@ -13,7 +13,7 @@ const MessageSection = () => {
                     <motion.h2
                         initial={{ y: -10 }}
                         animate={{ y: 0 }}
-                        className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-6 pb-2"
+                        className="text-2xl sm:text-3xl md:text-5xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-6 pb-2 leading-tight"
                     >
                         A Special Message
                     </motion.h2>

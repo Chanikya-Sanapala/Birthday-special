@@ -14,9 +14,10 @@ const Countdown = ({ onComplete }) => {
         
         if (attempts < 5) {
             lastMoveTime.current = now;
-            // Larger movement range based on viewport
-            const newX = (Math.random() - 0.5) * (window.innerWidth * 0.6);
-            const newY = (Math.random() - 0.5) * (window.innerHeight * 0.6);
+            // Constrain movement to within the viewport with some padding
+            // We use 30vw/30vh as a safe range to prevent overflow on small screens
+            const newX = (Math.random() - 0.5) * Math.min(window.innerWidth * 0.5, 300);
+            const newY = (Math.random() - 0.5) * Math.min(window.innerHeight * 0.5, 500);
             setPosition({ x: newX, y: newY });
             setAttempts(prev => prev + 1);
         }
