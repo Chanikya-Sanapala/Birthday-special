@@ -5,12 +5,18 @@ import PhotoStack from './components/PhotoStack';
 import MessageSection from './components/MessageSection';
 import MusicPlayer from './components/MusicPlayer';
 import FallingHearts from './components/FallingHearts';
+import Countdown from './components/Countdown';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(-1); // Start with countdown
+    const [shouldPlayMusic, setShouldPlayMusic] = useState(false);
 
     const nextStep = () => setStep(prev => prev + 1);
+    const startApp = () => {
+        setShouldPlayMusic(true);
+        nextStep();
+    };
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -18,6 +24,7 @@ function App() {
 
     const renderStep = () => {
         switch (step) {
+            case -1: return <Countdown onComplete={startApp} />;
             case 0: return <WelcomeScreen onNext={nextStep} />;
             case 1: return <CakeSection onNext={nextStep} />;
             case 2: return <PhotoStack onNext={nextStep} />;
@@ -29,7 +36,7 @@ function App() {
     return (
         <div className="gradient-bg selection:bg-pink-200 min-h-screen relative">
             <FallingHearts />
-            <MusicPlayer />
+            <MusicPlayer autoPlay={shouldPlayMusic} />
 
             <AnimatePresence mode="wait">
                 <motion.div

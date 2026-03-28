@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Music2, Music, Gift, Heart } from 'lucide-react';
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ autoPlay }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef(null);
 
     useEffect(() => {
-        // Initial attempt to play (might be blocked by browser)
+        if (autoPlay) {
+            setIsPlaying(true);
+        }
+    }, [autoPlay]);
+
+    useEffect(() => {
         if (isPlaying) {
             audioRef.current.play().catch(err => {
                 console.log("Autoplay blocked", err);
